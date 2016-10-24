@@ -34,7 +34,8 @@ public class CustomersRecyclerViewAdapter extends RecyclerView.Adapter<CustomerV
     }
 
     public void setCustomers(List<CustomerModel> customers) {
-        this.customers = new ArrayList<>(customers);
+        if (null != customers)
+            this.customers = new ArrayList<>(customers);
     }
 
     @Override

@@ -36,7 +36,9 @@ public class TablesRecyclerViewAdapter extends RecyclerView.Adapter<TableViewHol
     }
 
     public void setTables(List<TableModel> tables, ArrayList<BookingModel> bookings) {
-        this.tables = new ArrayList<>(tables);
+        if (null != tables)
+            this.tables = new ArrayList<>(tables);
+
         this.bookings = bookings;
     }
 
@@ -63,10 +65,11 @@ public class TablesRecyclerViewAdapter extends RecyclerView.Adapter<TableViewHol
     }
 
     public boolean checkTableIsBooked(TableModel table) {
-        for (BookingModel booking : bookings) {
-            if (booking.getTable().getId() == table.getId())
-                return true;
-        }
+        if (null != bookings)
+            for (BookingModel booking : bookings) {
+                if (booking.getTable().getId() == table.getId())
+                    return true;
+            }
 
         return false;
     }
