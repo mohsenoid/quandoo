@@ -34,6 +34,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rx.subscriptions.CompositeSubscription;
 import timber.log.Timber;
 
@@ -64,6 +65,11 @@ public class TablesFragment extends BaseFragment implements TableView {
     RecyclerView list;
     @BindView(R.id.no_network)
     ViewGroup noInternet;
+
+    @OnClick(R.id.no_network)
+    void onNoNetworkClick() {
+        presenter.loadTablesData(Utils.isConnected(context));
+    }
 
     private FirebaseAnalytics firebaseAnalytics;
     private ProgressDialog progressDialog;
@@ -163,6 +169,16 @@ public class TablesFragment extends BaseFragment implements TableView {
         }
     }
 
+    @Override
+    public void showNoInternetMessage() {
+        noInternet.setVisibility(View.VISIBLE);
+        list.setVisibility(View.GONE);
+
+        if (null != listener) {
+            listener.showNoInternetMessage();
+        }
+    }
+
     private void initRecyclerView() {
         list.setLayoutManager(layoutManager);
         list.addItemDecoration(gridSpacingItemDecoration);
@@ -172,7 +188,7 @@ public class TablesFragment extends BaseFragment implements TableView {
     public void showRetryMessage(Throwable throwable) {
         Timber.e(throwable, "Retry error!");
 
-        Snackbar.make(list, resources.getString(R.string.retry_message), Snackbar.LENGTH_LONG)
+        Snackbar.make(list, resources.getString(R.string.retry_message), Snackbar.LENGTH_INDEFINITE)
                 .setAction(R.string.retry, v -> presenter.loadTablesData(Utils.isConnected(context)))
                 .show();
     }

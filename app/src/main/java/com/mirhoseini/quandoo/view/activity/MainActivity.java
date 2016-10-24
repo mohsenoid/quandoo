@@ -105,6 +105,19 @@ public class MainActivity extends BaseActivity implements CustomersFragment.OnLi
     }
 
     @Override
+    public void showNoInternetMessage() {
+        Timber.d("Showing No Internet Message");
+
+        Snackbar.make(toolbar, R.string.no_internet_message, Snackbar.LENGTH_LONG)
+                .setAction(R.string.go_online, v -> {
+                    startActivity(new Intent(
+                            Settings.ACTION_WIFI_SETTINGS));
+                })
+                .setActionTextColor(Color.RED)
+                .show();
+    }
+
+    @Override
     public void showTables(CustomerModel customer) {
         startActivity(TablesActivity.newIntent(this, customer));
     }

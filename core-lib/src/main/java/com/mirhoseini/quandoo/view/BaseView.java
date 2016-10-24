@@ -10,4 +10,6 @@ public interface BaseView {
 
     void showOfflineMessage();
 
+    void showNoInternetMessage();
+
 }

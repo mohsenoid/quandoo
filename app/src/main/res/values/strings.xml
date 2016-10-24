@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Quandoo</string>
-    <string name="offline_message">No internet connection, Offline data!</string>
+    <string name="offline_message">Offline data!</string>
+    <string name="no_internet_message">No internet connection!</string>
     <string name="go_online">Go Online</string>
     <string name="retry_message">An error happened</string>
     <string name="retry">Retry</string>

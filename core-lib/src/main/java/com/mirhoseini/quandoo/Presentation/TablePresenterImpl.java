@@ -95,7 +95,7 @@ public class TablePresenterImpl implements TablePresenter {
                                 }
                             } else {
                                 if (null != view) {
-                                    view.showOfflineMessage();
+                                    view.showNoInternetMessage();
                                 }
                             }
                         });

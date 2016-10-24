@@ -29,6 +29,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rx.subscriptions.CompositeSubscription;
 import timber.log.Timber;
 
@@ -55,6 +56,13 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
 
     @BindView(R.id.list)
     RecyclerView list;
+    @BindView(R.id.no_network)
+    ViewGroup noNetwork;
+
+    @OnClick(R.id.no_network)
+    void onNoNetworkClick(){
+        presenter.loadCustomersData(Utils.isConnected(context));
+    }
 
     private FirebaseAnalytics firebaseAnalytics;
     private ProgressDialog progressDialog;
@@ -143,6 +151,16 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
         }
     }
 
+    @Override
+    public void showNoInternetMessage() {
+        noNetwork.setVisibility(View.VISIBLE);
+        list.setVisibility(View.GONE);
+
+        if (null != listener) {
+            listener.showNoInternetMessage();
+        }
+    }
+
     private void initRecyclerView() {
         list.setLayoutManager(layoutManager);
         list.addItemDecoration(gridSpacingItemDecoration);
@@ -159,7 +177,7 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
     public void showRetryMessage(Throwable throwable) {
         Timber.e(throwable, "Retry error!");
 
-        Snackbar.make(list, resources.getString(R.string.retry_message), Snackbar.LENGTH_LONG)
+        Snackbar.make(list, resources.getString(R.string.retry_message), Snackbar.LENGTH_INDEFINITE)
                 .setAction(R.string.retry, v -> presenter.loadCustomersData(Utils.isConnected(context)))
                 .show();
     }
@@ -184,6 +202,9 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
     @Override
     public void setCustomersData(ArrayList<CustomerModel> customers) {
         Timber.i("Loaded customers data.");
+
+        noNetwork.setVisibility(View.GONE);
+        list.setVisibility(View.VISIBLE);
 
         adapter.setCustomers(customers);
         list.setAdapter(adapter);

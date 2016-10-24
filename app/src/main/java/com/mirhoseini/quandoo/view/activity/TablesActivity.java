@@ -108,6 +108,18 @@ public class TablesActivity extends BaseActivity implements TablesFragment.OnLis
                 .show();
     }
 
+    @Override
+    public void showNoInternetMessage() {
+        Timber.d("Showing No Internet Message");
+
+        Snackbar.make(toolbar, R.string.no_internet_message, Snackbar.LENGTH_LONG)
+                .setAction(R.string.go_online, v -> {
+                    startActivity(new Intent(
+                            Settings.ACTION_WIFI_SETTINGS));
+                })
+                .setActionTextColor(Color.RED)
+                .show();
+    }
 
     @Override
     protected void injectDependencies(ApplicationComponent component) {

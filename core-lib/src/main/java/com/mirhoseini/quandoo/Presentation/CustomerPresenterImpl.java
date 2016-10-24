@@ -82,7 +82,7 @@ public class CustomerPresenterImpl implements CustomerPresenter {
                                 }
                             } else {
                                 if (null != view) {
-                                    view.showOfflineMessage();
+                                    view.showNoInternetMessage();
                                 }
                             }
                         });
