@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorAccent">#f7b235</color>
+
+    <color name="trans_gray">#A555</color>
+    <color name="table_reserved">#F44336</color>
+    <color name="table_empty">#8BC34A</color>
+    <color name="table_occupied">#795548</color>
+</resources>

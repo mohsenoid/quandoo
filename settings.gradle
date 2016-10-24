@@ -1,0 +1,3 @@
+include ':quandoo-app', ':quandoo-core'
+project(':quandoo-app').projectDir = new File('app')
+project(':quandoo-core').projectDir = new File('core-lib')

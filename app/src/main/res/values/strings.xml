@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Quandoo</string>
+    <string name="offline_message">No internet connection, Offline data!</string>
+    <string name="go_online">Go Online</string>
+    <string name="retry_message">An error happened</string>
+    <string name="retry">Retry</string>
+    <string name="please_wait">Loading data, please wait…</string>
+    <string name="no_network">no network</string>
+    <string name="search">Search</string>
+    <string name="reserved">Reserved</string>
+    <string name="available">Available</string>
+    <string name="booking_title">Booking Table</string>
+    <string name="booking_message">Booking table number %1$d for %2$s?</string>
+    <string name="book_table">Book Table</string>
+    <string name="cancel">Cancel</string>
+    <string name="booked">Booked</string>
+    <string name="table_unavailable">This table is not available!</string>
+    <string name="table_booked">Table booked!</string>
+</resources>

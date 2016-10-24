@@ -1,0 +1,53 @@
+# --table-start--
+dataClass=com.mirhoseini.quandoo.database.model.BookingModel
+tableName=booking
+# --table-fields-start--
+# --field-start--
+fieldName=table
+columnName=table
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=customer
+columnName=customer
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.mirhoseini.quandoo.database.model.CustomerModel
+tableName=customer
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=_id
+id=true
+# --field-end--
+# --field-start--
+fieldName=firstName
+columnName=first_name
+# --field-end--
+# --field-start--
+fieldName=lastName
+columnName=last_name
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.mirhoseini.quandoo.database.model.TableModel
+tableName=table
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=_id
+id=true
+# --field-end--
+# --field-start--
+fieldName=isReserved
+columnName=is_reserved
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

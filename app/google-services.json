@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "670438403646",
+    "firebase_url": "https://quandoo-be977.firebaseio.com",
+    "project_id": "quandoo-be977",
+    "storage_bucket": "quandoo-be977.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670438403646:android:db797f0685e3600f",
+        "android_client_info": {
+          "package_name": "com.mirhoseini.quandoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670438403646-1s1olku5u4psofn04dbvtvnnrm9le2cq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mirhoseini.quandoo",
+            "certificate_hash": "430B0413C05B949C205BC212DC084CA5DAF25D3B"
+          }
+        },
+        {
+          "client_id": "670438403646-ht3ioiniumlsv8vt537142ha9geef9u7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUdMN6GFB9cQlOL1gQZcIZaaQBClBWN7M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670438403646-ht3ioiniumlsv8vt537142ha9geef9u7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
