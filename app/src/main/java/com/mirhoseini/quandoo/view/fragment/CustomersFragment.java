@@ -81,12 +81,6 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
         return fragment;
     }
 
-//    private void logFirebaseAnalyticsEvent(String query) {
-//        Bundle bundle = new Bundle();
-//        bundle.putString(FirebaseAnalytics.Param.SEARCH_TERM, query);
-//        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SEARCH, bundle);
-//    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -211,7 +205,15 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
     }
 
     public void doSearch(String query) {
+        logFirebaseAnalyticsEvent(query);
+
         presenter.doSearch(query);
+    }
+
+    private void logFirebaseAnalyticsEvent(String query) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SEARCH_TERM, query);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SEARCH, bundle);
     }
 
     public void clearFilter() {
