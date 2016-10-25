@@ -45,9 +45,7 @@ public class AppTableModule extends TableModule {
     @Provides
     @Table
     public GridLayoutManager provideLayoutManager() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(context, columnCount);
-
-        return gridLayoutManager;
+        return new GridLayoutManager(context, columnCount);
     }
 
     @Provides

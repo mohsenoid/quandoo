@@ -107,7 +107,13 @@ public class CustomerPresenterImpl implements CustomerPresenter {
 
     @Override
     public void destroy() {
+        if (subscription != null && !subscription.isUnsubscribed())
+            subscription.unsubscribe();
+
+        interactor.onDestroy();
+
         view = null;
+        interactor = null;
     }
 
 }

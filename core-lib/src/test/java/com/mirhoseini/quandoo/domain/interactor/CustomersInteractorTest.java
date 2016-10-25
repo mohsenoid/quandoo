@@ -34,7 +34,7 @@ public class CustomersInteractorTest {
 
         // Set up the stub we want to return in the mock
         expectedResult = new CustomerResponse[1];
-        expectedResult[0] =  new CustomerResponse(1, "Mohsen", "Mirhoseini Argi");
+        expectedResult[0] = new CustomerResponse(1, "Mohsen", "Mirhoseini Argi");
 
         // mock scheduler to run immediately
         when(scheduler.mainThread())

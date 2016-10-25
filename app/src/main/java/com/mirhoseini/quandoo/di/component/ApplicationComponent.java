@@ -7,7 +7,6 @@ import com.mirhoseini.quandoo.di.module.AppTableModule;
 import com.mirhoseini.quandoo.di.module.ApplicationModule;
 import com.mirhoseini.quandoo.di.module.ClientModule;
 import com.mirhoseini.quandoo.di.module.DatabaseModule;
-import com.mirhoseini.quandoo.service.ClearBookingAlarmReceiver;
 import com.mirhoseini.quandoo.view.activity.MainActivity;
 import com.mirhoseini.quandoo.view.activity.TablesActivity;
 

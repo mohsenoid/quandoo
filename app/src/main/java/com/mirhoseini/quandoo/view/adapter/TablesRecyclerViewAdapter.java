@@ -26,10 +26,9 @@ import rx.subjects.PublishSubject;
 
 public class TablesRecyclerViewAdapter extends RecyclerView.Adapter<TableViewHolder> {
 
+    private final PublishSubject<TableModel> notify = PublishSubject.create();
     private ArrayList<TableModel> tables = new ArrayList<>();
     private ArrayList<BookingModel> bookings = new ArrayList<>();
-
-    private PublishSubject<TableModel> notify = PublishSubject.create();
 
     @Inject
     public TablesRecyclerViewAdapter() {

@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mirhoseini.quandoo.Presentation.TablePresenter;
 import com.mirhoseini.quandoo.R;
 import com.mirhoseini.quandoo.database.model.BookingModel;
@@ -64,22 +63,13 @@ public class TablesFragment extends BaseFragment implements TableView {
     @BindView(R.id.list)
     RecyclerView list;
     @BindView(R.id.no_network)
-    ViewGroup noInternet;
-
-    @OnClick(R.id.no_network)
-    void onNoNetworkClick() {
-        presenter.loadTablesData(Utils.isConnected(context));
-    }
-
-    private FirebaseAnalytics firebaseAnalytics;
+    View noNetwork;
     private ProgressDialog progressDialog;
-
     private CompositeSubscription subscriptions = new CompositeSubscription();
     private CustomerModel customer;
     private AlertDialog bookingDialog;
-
     /**
-     * Mandatory noInternet constructor for the fragment manager to instantiate the
+     * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
     public TablesFragment() {
@@ -93,6 +83,11 @@ public class TablesFragment extends BaseFragment implements TableView {
         return fragment;
     }
 
+    @OnClick(R.id.no_network)
+    void onNoNetworkClick() {
+        presenter.loadTablesData(Utils.isConnected(context));
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,9 +98,6 @@ public class TablesFragment extends BaseFragment implements TableView {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
-        // Obtain the FirebaseAnalytics instance.
-        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
 
         subscriptions.add(
                 adapter.asObservable()
@@ -122,7 +114,7 @@ public class TablesFragment extends BaseFragment implements TableView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_customer, container, false);
+        View view = inflater.inflate(R.layout.fragment_tables, container, false);
 
         ButterKnife.bind(this, view);
 
@@ -171,7 +163,7 @@ public class TablesFragment extends BaseFragment implements TableView {
 
     @Override
     public void showNoInternetMessage() {
-        noInternet.setVisibility(View.VISIBLE);
+        noNetwork.setVisibility(View.VISIBLE);
         list.setVisibility(View.GONE);
 
         if (null != listener) {
@@ -221,13 +213,13 @@ public class TablesFragment extends BaseFragment implements TableView {
     public void setTablesData(ArrayList<TableModel> tables, ArrayList<BookingModel> bookings) {
         if (tables.size() > 0) {
             list.setVisibility(View.VISIBLE);
-            noInternet.setVisibility(View.GONE);
+            noNetwork.setVisibility(View.GONE);
 
             adapter.setTables(tables, bookings);
             list.setAdapter(adapter);
         } else {
             list.setVisibility(View.GONE);
-            noInternet.setVisibility(View.VISIBLE);
+            noNetwork.setVisibility(View.VISIBLE);
         }
     }
 

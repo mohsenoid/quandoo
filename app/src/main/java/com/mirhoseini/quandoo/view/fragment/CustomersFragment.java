@@ -57,28 +57,25 @@ public class CustomersFragment extends BaseFragment implements CustomerView {
     @BindView(R.id.list)
     RecyclerView list;
     @BindView(R.id.no_network)
-    ViewGroup noNetwork;
-
-    @OnClick(R.id.no_network)
-    void onNoNetworkClick(){
-        presenter.loadCustomersData(Utils.isConnected(context));
-    }
-
+    View noNetwork;
     private FirebaseAnalytics firebaseAnalytics;
     private ProgressDialog progressDialog;
-
     private CompositeSubscription subscriptions = new CompositeSubscription();
 
     /**
-     * Mandatory noInternet constructor for the fragment manager to instantiate the
+     * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
     public CustomersFragment() {
     }
 
     public static CustomersFragment newInstance() {
-        CustomersFragment fragment = new CustomersFragment();
-        return fragment;
+        return new CustomersFragment();
+    }
+
+    @OnClick(R.id.no_network)
+    void onNoNetworkClick() {
+        presenter.loadCustomersData(Utils.isConnected(context));
     }
 
     @Override

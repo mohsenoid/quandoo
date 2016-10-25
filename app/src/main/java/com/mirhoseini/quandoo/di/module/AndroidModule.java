@@ -19,7 +19,7 @@ import dagger.Provides;
 @Module
 public class AndroidModule {
 
-    private QuandooApplication application;
+    private final QuandooApplication application;
 
     public AndroidModule(QuandooApplication application) {
         this.application = application;

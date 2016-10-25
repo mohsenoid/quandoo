@@ -26,13 +26,13 @@ import butterknife.ButterKnife;
 public class TableViewHolder extends RecyclerView.ViewHolder {
 
     public final View view;
+    private final ViewDataBinding binding;
     @BindView(R.id.icon)
     AppCompatImageView icon;
     @BindView(R.id.state)
     TextView state;
     TableModel table;
     boolean isBooked;
-    private ViewDataBinding binding;
 
     public TableViewHolder(View view) {
         super(view);

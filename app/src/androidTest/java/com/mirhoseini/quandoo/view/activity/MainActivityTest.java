@@ -39,9 +39,9 @@ import static org.mockito.Mockito.when;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
-    public static final int TEST_CHARACTER_ID = 1;
-    public static final String TEST_CUSTOMER_FIRST_NAME = "Mohsen";
-    public static final String TEST_CUSTOMER_LAST_NAME = "Mirhoseini Argi";
+    private static final int TEST_CHARACTER_ID = 1;
+    private static final String TEST_CUSTOMER_FIRST_NAME = "Mohsen";
+    private static final String TEST_CUSTOMER_LAST_NAME = "Mirhoseini Argi";
 
     @Rule
     public ActivityTestRule<MainActivity> mainActivity = new ActivityTestRule<>(
@@ -59,7 +59,7 @@ public class MainActivityTest {
     public void setUp() {
         Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
         QuandooApplication app = (QuandooApplication) instrumentation.getTargetContext().getApplicationContext();
-        ApplicationTestComponent component = (ApplicationTestComponent) app.getComponent();
+        ApplicationTestComponent component = (ApplicationTestComponent) QuandooApplication.getComponent();
         component.inject(this);
 
         // Set up the stub we want to return in the mock

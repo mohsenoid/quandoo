@@ -14,8 +14,8 @@ import com.mirhoseini.quandoo.database.model.CustomerModel;
 public class CustomerViewHolder extends RecyclerView.ViewHolder {
 
     public final View view;
+    private final ViewDataBinding binding;
     CustomerModel customer;
-    private ViewDataBinding binding;
 
     public CustomerViewHolder(View view) {
         super(view);

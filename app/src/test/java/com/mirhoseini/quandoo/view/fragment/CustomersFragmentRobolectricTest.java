@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 import static com.mirhoseini.quandoo.test.support.Assert.assertProgressDialogIsShown;
@@ -24,7 +24,7 @@ import static org.junit.Assert.assertNull;
  * Created by Mohsen on 24/10/2016.
  */
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21, shadows = {ShadowSnackbar.class})
 public class CustomersFragmentRobolectricTest {
 
@@ -38,7 +38,7 @@ public class CustomersFragmentRobolectricTest {
         assertNotNull(activity);
 
         // setup fragment
-        fragment = (CustomersFragment) activity.getSupportFragmentManager().findFragmentByTag(activity.TAG_CUSTOMERS_FRAGMENT);
+        fragment = (CustomersFragment) activity.getSupportFragmentManager().findFragmentByTag(MainActivity.TAG_CUSTOMERS_FRAGMENT);
         assertNotNull(fragment);
 
     }
@@ -73,7 +73,7 @@ public class CustomersFragmentRobolectricTest {
     }
 
     @Test
-    public void testShowOfflineMessage() throws Exception{
+    public void testShowOfflineMessage() throws Exception {
         fragment.showOfflineMessage();
 
         assertSnackbarIsShown(R.string.offline_message);
@@ -82,7 +82,7 @@ public class CustomersFragmentRobolectricTest {
     }
 
     @Test
-    public void testShowNoInternetMessage() throws Exception{
+    public void testShowNoInternetMessage() throws Exception {
         fragment.showNoInternetMessage();
 
         assertSnackbarIsShown(R.string.no_internet_message);

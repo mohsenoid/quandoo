@@ -8,14 +8,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowToast;
 
 import static com.mirhoseini.quandoo.test.support.Assert.assertSnackbarIsShown;
-import static com.mirhoseini.quandoo.test.support.Assert.assertViewIsNotVisible;
-import static com.mirhoseini.quandoo.test.support.Assert.assertViewIsVisible;
-import static com.mirhoseini.quandoo.test.support.ViewLocator.getView;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
@@ -25,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
  * Created by Mohsen on 24/10/2016.
  */
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21, shadows = {ShadowSnackbar.class})
 public class MainActivityRobolectricTest {
 

@@ -25,9 +25,8 @@ import rx.subjects.PublishSubject;
 
 public class CustomersRecyclerViewAdapter extends RecyclerView.Adapter<CustomerViewHolder> {
 
+    private final PublishSubject<CustomerModel> notify = PublishSubject.create();
     private ArrayList<CustomerModel> customers = new ArrayList<>();
-
-    private PublishSubject<CustomerModel> notify = PublishSubject.create();
 
     @Inject
     public CustomersRecyclerViewAdapter() {

@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 public class ClearBookingAlarmReceiver extends BroadcastReceiver {
 
-    public static final String TAG = "BookingAlarmReceiver";
+    private static final String TAG = "BookingAlarmReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {

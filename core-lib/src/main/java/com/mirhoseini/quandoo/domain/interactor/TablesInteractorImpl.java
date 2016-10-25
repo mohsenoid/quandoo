@@ -18,8 +18,8 @@ import rx.subjects.ReplaySubject;
 @Table
 public class TablesInteractorImpl implements TablesInteractor {
 
-    private QuandooApi api;
-    private SchedulerProvider scheduler;
+    private final QuandooApi api;
+    private final SchedulerProvider scheduler;
 
     private ReplaySubject<boolean[]> tablesSubject;
     private Subscription tablesSubscription;

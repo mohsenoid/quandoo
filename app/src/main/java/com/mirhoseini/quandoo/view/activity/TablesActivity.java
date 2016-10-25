@@ -41,7 +41,6 @@ public class TablesActivity extends BaseActivity implements TablesFragment.OnLis
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    private CustomerModel customer;
     private TablesFragment tablesFragment;
 
     public static Intent newIntent(Context context, CustomerModel customer) {
@@ -58,7 +57,7 @@ public class TablesActivity extends BaseActivity implements TablesFragment.OnLis
         // inject views using ButterKnife
         ButterKnife.bind(this);
 
-        customer = (CustomerModel) getIntent().getExtras().getSerializable(ARG_CUSTOMER);
+        CustomerModel customer = (CustomerModel) getIntent().getExtras().getSerializable(ARG_CUSTOMER);
 
         if (null == customer)
             finish();
@@ -100,10 +99,7 @@ public class TablesActivity extends BaseActivity implements TablesFragment.OnLis
         Timber.d("Showing Offline Message");
 
         Snackbar.make(toolbar, R.string.offline_message, Snackbar.LENGTH_LONG)
-                .setAction(R.string.go_online, v -> {
-                    startActivity(new Intent(
-                            Settings.ACTION_WIFI_SETTINGS));
-                })
+                .setAction(R.string.go_online, v -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
                 .setActionTextColor(Color.GREEN)
                 .show();
     }
@@ -113,10 +109,7 @@ public class TablesActivity extends BaseActivity implements TablesFragment.OnLis
         Timber.d("Showing No Internet Message");
 
         Snackbar.make(toolbar, R.string.no_internet_message, Snackbar.LENGTH_LONG)
-                .setAction(R.string.go_online, v -> {
-                    startActivity(new Intent(
-                            Settings.ACTION_WIFI_SETTINGS));
-                })
+                .setAction(R.string.go_online, v -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
                 .setActionTextColor(Color.RED)
                 .show();
     }

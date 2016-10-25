@@ -96,10 +96,7 @@ public class MainActivity extends BaseActivity implements CustomersFragment.OnLi
         Timber.d("Showing Offline Message");
 
         Snackbar.make(toolbar, R.string.offline_message, Snackbar.LENGTH_LONG)
-                .setAction(R.string.go_online, v -> {
-                    startActivity(new Intent(
-                            Settings.ACTION_WIFI_SETTINGS));
-                })
+                .setAction(R.string.go_online, v -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
                 .setActionTextColor(Color.GREEN)
                 .show();
     }
@@ -109,10 +106,7 @@ public class MainActivity extends BaseActivity implements CustomersFragment.OnLi
         Timber.d("Showing No Internet Message");
 
         Snackbar.make(toolbar, R.string.no_internet_message, Snackbar.LENGTH_LONG)
-                .setAction(R.string.go_online, v -> {
-                    startActivity(new Intent(
-                            Settings.ACTION_WIFI_SETTINGS));
-                })
+                .setAction(R.string.go_online, v -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
                 .setActionTextColor(Color.RED)
                 .show();
     }

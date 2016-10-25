@@ -1,7 +1,7 @@
 Quandoo Application [![CircleCI](https://circleci.com/gh/mmirhoseini/quandoo.svg?style=svg)](https://circleci.com/gh/mmirhoseini/quandoo) [![Build Status](https://travis-ci.org/mmirhoseini/quandoo.svg?branch=master)](https://travis-ci.org/mmirhoseini/quandoo)
 ===============================
 
-This repository holds the source code of the Quando Application, a simple Android Application for Table reservation.
+This repository holds the source code of the Quandoo Application, a simple Android Application for Table reservation.
 This application was created by [Mohsen Mirhoseini Argi](http://mirhoseini.com), as part of the technical assessment by the [Quandoo GmbH](https://quandoo.de) team.
 
 --------------------
