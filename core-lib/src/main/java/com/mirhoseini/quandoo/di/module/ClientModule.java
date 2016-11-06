@@ -23,7 +23,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 @Module
 public class ClientModule {
 
-    private static final String CACHE_CONTROL = "Customer-Control";
+    private static final String CACHE_CONTROL = "Cache-Control";
 
     @Singleton
     @Provides
